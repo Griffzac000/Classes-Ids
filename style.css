@@ -35,7 +35,7 @@ main {
 }
 a {
     display: inline-block;
-    color: black;
+    color: deepskyblue;
     text-decoration: none;
     transition: transform 0.2s;
 }
@@ -85,7 +85,7 @@ footer {
     color: #666;
 }
 
-#nav-bar-list {
+.nav-bar-list {
     list-style: none;
 }
 #footer-list li {
