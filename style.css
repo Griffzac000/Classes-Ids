@@ -64,7 +64,7 @@ a:hover::after {
 
 
 section {
-text-align: center;
+    text-align: center;
     border-bottom: #333333 solid 10px;
     background-color: gray;
     color: black;
