@@ -14,7 +14,7 @@ body {
 /* Header styles */
 header {
     background-color: #333;
-    color: black;
+    color: white;
     padding: 20px;
     text-align: center;
 
@@ -50,6 +50,7 @@ a {
     color: deepskyblue;
     text-decoration: none;
     transition: transform 0.2s;
+    position: relative;
 }
 
 /* Animations */
@@ -90,12 +91,10 @@ h2 {
     color: #333;
     border-bottom: 2px solid #000000;
     padding-bottom: 5px;
-
+    transition: transform 0.2s ease;
 }
 
 /* Animations */
-
-
 h2:hover {
     transform: translateY(-3px);
 }
@@ -114,6 +113,10 @@ footer {
 /* nav-bar-list styles */
 .nav-bar-list {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
 }
 
 /* Footer styles */
@@ -130,10 +133,11 @@ footer {
 /* Gallery styles */
 .gallery-item img {
     width: 250px;
-    height: 400px; /* Fixed height for the image */
-    object-fit: cover; /* Image covers the container, maintaining aspect ratio and cropping excess */
-    object-position: center; /* Centers the image within the container */
-    float:left;
+    height: 400px; /* controls uniform height */
+    object-fit: cover; /* fills box, crops if needed */
+    object-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 
 }
 /* Gallery styles */
