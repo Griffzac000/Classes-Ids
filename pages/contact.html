@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
+        <script src="https://unpkg.com/@supabase/supabase-js"></script>
+        <script src="../script.js"></script>
         <title> Contact Us </title>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -28,10 +31,25 @@
                 <p><strong>Phone:</strong> (555) 123-4567</p>
                 <p><strong>Address:</strong> 123 Web Street, Internet City, WWW 12345</p>
             </section>
-        </main>
 
-        <footer>
-            <p>© 2026 My Website. All rights reserved.</p>
-        </footer>
+            <section class="contact-section">
+                <h2>Guestbook</h2>
+
+                <form id="guestbook-form">
+                    <input type="text" id="nameInput" placeholder="Your name" required>
+                    <input type="text" id="messageInput" placeholder="Your message" required>
+
+                    <select id="categoryInput">
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                    </select>
+
+                    <button type="submit">Submit</button>
+                </form>
+
+                <p id="loading">Loading...</p>
+                <div id="guestbook-list"></div>
+            </section>
+        </main>
     </body>
 </html>
