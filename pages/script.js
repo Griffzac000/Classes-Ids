@@ -1,11 +1,6 @@
-// ===============================
-// SUPABASE CONFIG (TOP OF FILE)
-// ===============================
-const supabaseUrl = "YOUR_URL";
-const supabaseKey = "YOUR_ANON_KEY";
-const supabase = window.supabase
-    ? window.supabase.createClient(supabaseUrl, supabaseKey)
-    : null;
+const supabaseUrl = "https://bzvxnuuqiquzfkiibcli.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6dnhudXVxaXF1emZraWliY2xpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5Njk4MjQsImV4cCI6MjA5MzU0NTgyNH0.ePYuz6zHyoDT45CaD5TVJJJY62M08lu3d3htOzEg1PI";
+const db = supabase.createClient(supabaseUrl, supabaseKey);
 
 
 const siteName = "Fashion Gallery"; // string
@@ -85,12 +80,12 @@ galleryItems.forEach(item => {
 
 
 async function loadMessages() {
-    if (!guestbookList || !loadingText || !supabase) return;
+    if (!guestbookList || !loadingText || !db) return;
 
     loadingText.style.display = "block";
 
     try {
-        const { data, error } = await supabase
+        const { data, error } = await db
             .from("guestbook")
             .select("*")
             .order("created_at", { ascending: false });
@@ -125,10 +120,10 @@ async function loadMessages() {
 
 
 async function addMessage(name, message, category) {
-    if (!supabase) return;
+    if (!db) return;
 
     try {
-        const { error } = await supabase
+        const { error } = await db
             .from("guestbook")
             .insert([{ name, message, category }]);
 
@@ -144,10 +139,10 @@ async function addMessage(name, message, category) {
 
 
 async function deleteMessage(id) {
-    if (!supabase) return;
+    if (!db) return;
 
     try {
-        const { error } = await supabase
+        const { error } = await db
             .from("guestbook")
             .delete()
             .eq("id", id);
